@@ -3,6 +3,13 @@
   --crt-green: rgb(112, 159, 115);
   --crt-blue: rgb(40, 129, 206);
 }
+
+/* Reset */
+body {
+  margin: 0;
+  padding: 0;
+}
+
 /* Global */
 html {
   font-size: 1.5rem;
