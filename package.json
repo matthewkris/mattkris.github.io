@@ -1,0 +1,28 @@
+{
+  "name": "mattkris.github.io",
+  "version": "1.0.0",
+  "description": "Personal portfolio site",
+  "main": "index.js",
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.18",
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^4.1.18"
+  },
+  "scripts": {
+    "dev": "postcss index.css -o index.css --watch",
+    "build": "postcss index.css -o index.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthewkris/mattkris.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matthewkris/mattkris.github.io/issues"
+  },
+  "homepage": "https://github.com/matthewkris/mattkris.github.io#readme"
+}
