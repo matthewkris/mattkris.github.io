@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --crt-red: rgb(218, 49, 49);
+  --crt-green: rgb(112, 159, 115);
+  --crt-blue: rgb(40, 129, 206);
+}
+
+@layer base {
+  html {
+    font-size: 1.5rem;
+    min-height: 100%;
+    font-family: "Courier New", monospace;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@layer utilities {
+  .crt {
+    background-color: rgb(25, 25, 30);
+    text-shadow: 0 0 0.2em currentColor, 1px 1px rgba(255, 0, 255, 0.5),
+      -1px -1px rgba(0, 255, 255, 0.4);
+    position: relative;
+  }
+
+  .crt::before,
+  .crt::after {
+    content: "";
+    transform: translateZ(0);
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+  }
+
+  .crt::before {
+    background: repeating-linear-gradient(
+      var(--crt-red) 0px,
+      var(--crt-green) 2px,
+      var(--crt-blue) 4px
+    );
+  }
+
+  .crt::after {
+    background: repeating-linear-gradient(
+      90deg,
+      var(--crt-red) 1px,
+      var(--crt-green) 2px,
+      var(--crt-blue) 3px
+    );
+  }
+
+  .crt-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .code-line {
+    animation: typewriter 1s steps(60) 0.35s 1 normal both;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .cursor {
+    display: inline-block;
+    animation: blink-text-cursor 500ms infinite normal;
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-text-cursor {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
